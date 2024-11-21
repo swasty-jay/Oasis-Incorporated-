@@ -61,11 +61,11 @@ const Footer = () => {
                 Cart
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="/wishlist" className="text-gray-400 hover:text-white">
                 Wishlist
               </a>
-            </li>
+            </li> */}
             <li>
               <a href="/shop" className="text-gray-400 hover:text-white">
                 Shop
@@ -117,6 +117,7 @@ const Footer = () => {
                 size="3x"
                 className="text-gray-400 hover:text-white"
               />
+              <p className="text-gray-400 text-sm">Google Play</p>
             </a>
             {/* FontAwesomeIcon for Apple */}
             <a href="https://apps.apple.com/app/your-app-id">
@@ -126,33 +127,34 @@ const Footer = () => {
                 size="3x"
                 className="text-gray-400 hover:text-white size-10"
               />
+              <p className="text-gray-400 text-sm">App Store</p>
             </a>
           </div>
           <div className="flex space-x-4">
             {/* FontAwesome Icons */}
             <a
               href="https://facebook.com"
-              className="text-gray-400 hover:text-white"
+              className="text-gray-400 hover:text-white transform transition-transform duration-300 ease-in-out hover:scale-150"
             >
-              <FontAwesomeIcon icon={faFacebook} size="lg" />
+              <FontAwesomeIcon icon={faFacebook} beat size="lg" />
             </a>
             <a
               href="https://twitter.com"
-              className="text-gray-400 hover:text-white"
+              className="text-gray-400 hover:text-white transform transition-transform duration-300 ease-in-out hover:scale-150"
             >
-              <FontAwesomeIcon icon={faTwitter} size="lg" />
+              <FontAwesomeIcon icon={faTwitter} beat size="lg" />
             </a>
             <a
               href="https://github.com/swasty-jay/Oasis-Incorporated-"
-              className="text-gray-400 hover:text-white"
+              className="text-gray-400 hover:text-white transform transition-transform duration-300 ease-in-out hover:scale-150"
             >
-              <FontAwesomeIcon icon={faGithub} size="lg" />
+              <FontAwesomeIcon icon={faGithub} beat size="lg" />
             </a>
             <a
               href="https://linkedin.com"
-              className="text-gray-400 hover:text-white"
+              className="text-gray-400 hover:text-white transform transition-transform duration-300 ease-in-out hover:scale-150"
             >
-              <FontAwesomeIcon icon={faLinkedin} size="lg" />
+              <FontAwesomeIcon icon={faLinkedin} beat size="lg" />
             </a>
           </div>
         </div>

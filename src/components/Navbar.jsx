@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart, faUserLarge } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   //   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -35,35 +37,6 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <ul className="flex space-x-12 items-center">
-          {/* Search Input */}
-          <div className="relative w-64">
-            <input
-              type="text"
-              placeholder="Search products..."
-              value={searchTerm}
-              onChange={handleSearchChange}
-              className="w-full p-2 rounded border border-yellow-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-            />
-            {searchTerm && (
-              <div className="absolute bg-white text-gray-800 w-full mt-1 rounded shadow-md max-h-40 overflow-y-auto">
-                {filteredProducts.length > 0 ? (
-                  <ul>
-                    {filteredProducts.map((product, index) => (
-                      <li
-                        key={index}
-                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                      >
-                        {product}
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="px-4 py-2 text-gray-500">No products found.</p>
-                )}
-              </div>
-            )}
-          </div>
-
           {/* Other Links */}
           <li>
             <Link to="/" className="text-black text-2xl hover:text-yellow-400">
@@ -133,6 +106,65 @@ const Navbar = () => {
               </ul>
             )}
           </li> */}
+        </ul>
+        {/* Search bar */}
+        <div className="relative w-64">
+          <input
+            type="text"
+            placeholder="Search products..."
+            value={searchTerm}
+            onChange={handleSearchChange}
+            className="w-full p-2 rounded border border-yellow-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+          />
+          {searchTerm && (
+            <div className="absolute bg-white text-gray-800 w-full mt-1 rounded shadow-md max-h-40 overflow-y-auto">
+              {filteredProducts.length > 0 ? (
+                <ul>
+                  {filteredProducts.map((product, index) => (
+                    <li
+                      key={index}
+                      className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                    >
+                      {product}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="px-4 py-2 text-gray-500">No products found.</p>
+              )}
+            </div>
+          )}
+        </div>
+        {/* Cart Icon */}
+
+        <ul className="flex space-x-12 items-center">
+          {" "}
+          <li>
+            <Link
+              to="/cart"
+              className="text-black hover:text-yellow-400 relative"
+            >
+              <FontAwesomeIcon
+                icon={faShoppingCart}
+                size="lg"
+                className="text-2xl"
+              />
+              {/* Optional: Add a badge to show the number of items */}
+              {/* <span className="absolute top-0 right-0 bg-yellow-600 text-white text-xs rounded-full px-2 py-0.5">
+                3
+              </span> */}
+            </Link>
+          </li>
+          {/* Profile Icon */}
+          <li>
+            <Link to="/profile" className="text-black hover:text-yellow-400">
+              <FontAwesomeIcon
+                icon={faUserLarge}
+                size="lg"
+                className="text-2xl"
+              />
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
