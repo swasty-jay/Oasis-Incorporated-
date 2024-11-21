@@ -120,7 +120,7 @@ const Navbar = () => {
           <div className="relative w-64 ">
             <input
               type="text"
-              placeholder="Search products..."
+              placeholder="what are you looking for?..."
               value={searchTerm}
               onChange={handleSearchChange}
               className="w-full p-2 rounded border border-yellow-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
@@ -132,7 +132,7 @@ const Navbar = () => {
                     {filteredProducts.map((product, index) => (
                       <li
                         key={index}
-                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                        className="px-4 py-2 hover:bg-gray-500 cursor-pointer"
                       >
                         {product}
                       </li>
@@ -188,7 +188,7 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
-      <hr className="opacity-50" />
+      <hr className="opacity-85" />
     </>
   );
 };

@@ -13,7 +13,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-14 mb-0">
+    <footer className="bg-black text-white py-8 mb-0">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
         {/* Exclusive Section */}
         <div>
@@ -104,7 +104,9 @@ const Footer = () => {
         {/* Download App Section */}
         <div>
           <h4 className="text-lg font-semibold mb-4">Download App</h4>
-          <p className="text-gray-400 mb-4">Save $3 with App New User Only</p>
+          <p className="text-gray-400 mb-4">
+            Save Ghs20 with App New User Only
+          </p>
           <div className="flex space-x-4 mb-4">
             {/* FontAwesomeIcon for Google Play */}
             <a
