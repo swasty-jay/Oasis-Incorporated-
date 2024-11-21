@@ -1,8 +1,19 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram,
+  faLinkedin,
+  faGooglePlay,
+  faApple,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
+// import { faGooglePlay, faApple } from "@fortawesome/free-brands-svg-icons"; // Import Google Play and Apple icons
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-14 mb-0 ">
+    <footer className="bg-black text-white py-14 mb-0">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
         {/* Exclusive Section */}
         <div>
@@ -90,45 +101,58 @@ const Footer = () => {
           </ul>
         </div>
 
+        {/* Download App Section */}
         <div>
           <h4 className="text-lg font-semibold mb-4">Download App</h4>
           <p className="text-gray-400 mb-4">Save $3 with App New User Only</p>
-          <div className="flex space-x-2 mb-4">
-            <img
-              src="https://via.placeholder.com/100x40?text=Google+Play"
-              alt="Google Play"
-              className="h-10"
-            />
-            <img
-              src="https://via.placeholder.com/100x40?text=App+Store"
-              alt="App Store"
-              className="h-10"
-            />
+          <div className="flex space-x-4 mb-4">
+            {/* FontAwesomeIcon for Google Play */}
+            <a
+              href="https://play.google.com/store/apps/your-app-url"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon
+                icon={faGooglePlay}
+                size="3x"
+                className="text-gray-400 hover:text-white"
+              />
+            </a>
+            {/* FontAwesomeIcon for Apple */}
+            <a href="https://apps.apple.com/app/your-app-id">
+              {" "}
+              <FontAwesomeIcon
+                icon={faApple}
+                size="3x"
+                className="text-gray-400 hover:text-white size-10"
+              />
+            </a>
           </div>
           <div className="flex space-x-4">
+            {/* FontAwesome Icons */}
             <a
               href="https://facebook.com"
               className="text-gray-400 hover:text-white"
             >
-              <i className="fab fa-facebook-f"></i>
+              <FontAwesomeIcon icon={faFacebook} size="lg" />
             </a>
             <a
               href="https://twitter.com"
               className="text-gray-400 hover:text-white"
             >
-              <i className="fab fa-twitter"></i>
+              <FontAwesomeIcon icon={faTwitter} size="lg" />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://github.com/swasty-jay/Oasis-Incorporated-"
               className="text-gray-400 hover:text-white"
             >
-              <i className="fab fa-instagram"></i>
+              <FontAwesomeIcon icon={faGithub} size="lg" />
             </a>
             <a
               href="https://linkedin.com"
               className="text-gray-400 hover:text-white"
             >
-              <i className="fab fa-linkedin-in"></i>
+              <FontAwesomeIcon icon={faLinkedin} size="lg" />
             </a>
           </div>
         </div>
