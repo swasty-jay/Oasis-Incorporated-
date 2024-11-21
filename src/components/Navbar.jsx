@@ -150,7 +150,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/cart"
-                className="text-outline hover:text-yellow-400 relative"
+                className="text-yellow-400 hover:text-orange-400 relative"
               >
                 <FontAwesomeIcon
                   icon={faHeart}
@@ -162,7 +162,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/cart"
-                className="text-black hover:text-yellow-400 relative"
+                className="text-yellow-400 hover:text-orange-400 relative"
               >
                 <FontAwesomeIcon
                   icon={faShoppingCart}
@@ -177,7 +177,10 @@ const Navbar = () => {
             </li>
             {/* Profile Icon */}
             <li>
-              <Link to="/profile" className="text-black hover:text-yellow-400">
+              <Link
+                to="/profile"
+                className="text-yellow-400 hover:text-orange-400"
+              >
                 <FontAwesomeIcon
                   icon={faUserLarge}
                   size="lg"

@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
   faTwitter,
-  faInstagram,
   faLinkedin,
   faGooglePlay,
   faApple,
@@ -13,7 +12,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-8 mb-0">
+    <footer className="bg-black text-white py-5 mb-0">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
         {/* Exclusive Section */}
         <div>
