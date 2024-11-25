@@ -33,7 +33,7 @@ const Footer = () => {
           </form>
         </div>
 
-        {/* Support Section */}
+        {/* SUPPORT SECTION*/}
         <div>
           <h4 className="text-lg font-semibold mb-4">Support</h4>
           <p className="text-gray-400 mb-2">Tema Ghana.</p>

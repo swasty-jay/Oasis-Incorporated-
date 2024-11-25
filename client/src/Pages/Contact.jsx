@@ -59,7 +59,7 @@ function Contact() {
 
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition duration-200"
+              className="  bg-red-400 text-white p-2 rounded-md hover:bg-red-600 transition duration-200"
             >
               Send Message
             </button>
