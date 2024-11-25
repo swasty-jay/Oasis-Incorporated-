@@ -15,7 +15,7 @@ const Home = () => {
     },
     {
       id: 2,
-      image: "hero-banner2.jpg",
+      image: heroBanner1,
       title: "Discover New Gadgets",
       description: "Latest electronics at unbeatable prices.",
       buttonText: "Explore",
@@ -32,7 +32,7 @@ const Home = () => {
   const flashSalesProducts = [
     {
       id: 1,
-      image: "product1.jpg",
+      image: heroBanner1,
       title: "HAVIT HV G92 Gamepad",
       price: "$25",
       rating: 4.5,
@@ -167,9 +167,9 @@ const Home = () => {
               <img
                 src={slide.image}
                 alt={slide.title}
-                className="w-full h-full object-cover rounded-md"
+                className="w-full h-full  rounded-md"
               />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/50">
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-10  bg-black/50">
                 <h1 className="text-3xl md:text-5xl font-bold">
                   {slide.title}
                 </h1>
