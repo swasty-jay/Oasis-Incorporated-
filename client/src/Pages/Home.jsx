@@ -1,7 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+
+import heroBanner1 from "../assets/images/heroBanner1.jpg";
 
 const Home = () => {
-  // Mock Data for Sections
+  // Mock Data
+  const heroSlides = [
+    {
+      id: 1,
+      image: heroBanner1,
+      title: "Up to 10% Off Voucher",
+      description: "Shop and Save Big!",
+      buttonText: "Shop Now",
+    },
+    {
+      id: 2,
+      image: "hero-banner2.jpg",
+      title: "Discover New Gadgets",
+      description: "Latest electronics at unbeatable prices.",
+      buttonText: "Explore",
+    },
+    {
+      id: 3,
+      image: "hero-banner3.jpg",
+      title: "Style Your Home",
+      description: "Modern furniture for every space.",
+      buttonText: "Shop Furniture",
+    },
+  ];
+
   const flashSalesProducts = [
     {
       id: 1,
@@ -107,22 +134,81 @@ const Home = () => {
     },
   ];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === heroSlides.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? heroSlides.length - 1 : prevIndex - 1
+    );
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* Hero Section */}
-      <div className="relative w-full h-[400px] mb-12">
-        <img
-          src="hero-banner.jpg"
-          alt="Hero Banner"
-          className="w-full h-full object-cover rounded-md"
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-          <h1 className="text-3xl md:text-5xl font-bold">
-            Up to 10% Off Voucher
-          </h1>
-          <button className="mt-4 px-6 py-2 bg-red-500 text-white rounded-md">
-            Shop Now
+      {/* Hero Section with Framer Motion Carousel */}
+      <div className="relative w-full h-[400px] mb-12 overflow-hidden">
+        <motion.div
+          className="flex"
+          initial={{ x: "-100%" }}
+          animate={{ x: `${-currentIndex * 100}%` }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+        >
+          {heroSlides.map((slide) => (
+            <motion.div
+              key={slide.id}
+              className="min-w-full h-full relative"
+              style={{ flex: "0 0 100%" }}
+            >
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="w-full h-full object-cover rounded-md"
+              />
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white bg-black/50">
+                <h1 className="text-3xl md:text-5xl font-bold">
+                  {slide.title}
+                </h1>
+                <p className="mt-2 text-lg">{slide.description}</p>
+                <button className="mt-4 px-6 py-2 bg-red-500 text-white rounded-md">
+                  {slide.buttonText}
+                </button>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Navigation Buttons */}
+        <div className="absolute inset-0 flex items-center justify-between z-10">
+          <button
+            onClick={handlePrev}
+            className="p-2 bg-black/50 text-white rounded-full hover:bg-black"
+          >
+            &#8249;
           </button>
+          <button
+            onClick={handleNext}
+            className="p-2 bg-black/50 text-white rounded-full hover:bg-black"
+          >
+            &#8250;
+          </button>
+        </div>
+
+        {/* Pagination Dots */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+          {heroSlides.map((_, index) => (
+            <div
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-3 h-3 rounded-full cursor-pointer ${
+                currentIndex === index ? "bg-red-500" : "bg-gray-400"
+              }`}
+            ></div>
+          ))}
         </div>
       </div>
 
@@ -202,7 +288,7 @@ const Home = () => {
       {/* New Arrivals */}
       <section className="mb-12">
         <h2 className="text-2xl font-bold mb-6">New Arrivals</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
           {newArrivals.map((product) => (
             <div key={product.id} className="border p-4 rounded-md shadow-sm">
               <img
