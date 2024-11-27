@@ -167,7 +167,7 @@ const Home = () => {
               <img
                 src={slide.image}
                 alt={slide.title}
-                className="w-full h-full  rounded-md"
+                className=" h-full  rounded-md"
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-10  bg-black/50">
                 <h1 className="text-3xl md:text-5xl font-bold">
