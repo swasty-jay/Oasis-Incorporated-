@@ -35,9 +35,7 @@ const SidebarBanner = () => {
   };
 
   const handlePrevious = () => {
-    setCurrentSlide((prev) =>
-      prev === 0 ? slides.length - 1 : prev - 1
-    );
+    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
 
   return (
@@ -45,10 +43,14 @@ const SidebarBanner = () => {
       {/* Sidebar */}
       <div className="w-1/4 p-4 bg-gray-100">
         <ul className="space-y-2 text-sm">
-          <li className="hover:text-blue-600 cursor-pointer">Woman's Fashion</li>
+          <li className="hover:text-blue-600 cursor-pointer">
+            Woman's Fashion
+          </li>
           <li className="hover:text-blue-600 cursor-pointer">Men's Fashion</li>
           <li className="hover:text-blue-600 cursor-pointer">Electronics</li>
-          <li className="hover:text-blue-600 cursor-pointer">Home & Lifestyle</li>
+          <li className="hover:text-blue-600 cursor-pointer">
+            Home & Lifestyle
+          </li>
           <li className="hover:text-blue-600 cursor-pointer">Medicine</li>
           <li className="hover:text-blue-600 cursor-pointer">
             Sports & Outdoor
@@ -78,8 +80,12 @@ const SidebarBanner = () => {
             >
               {/* Slide Content */}
               <div className="text-white">
-                <h2 className="text-xl font-bold">{slides[currentSlide].title}</h2>
-                <p className="mt-2 text-lg">{slides[currentSlide].description}</p>
+                <h2 className="text-xl font-bold">
+                  {slides[currentSlide].title}
+                </h2>
+                <p className="mt-2 text-lg">
+                  {slides[currentSlide].description}
+                </p>
                 <button className="mt-4 px-4 py-2 bg-white text-black rounded">
                   Shop Now →
                 </button>

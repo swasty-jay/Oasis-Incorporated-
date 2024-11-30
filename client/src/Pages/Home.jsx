@@ -5,7 +5,7 @@ import headphone1 from "../assets/images/headphone1.jpg";
 import headphone2 from "../assets/images/headphone2.jpg";
 
 // Sidebar Component
-const Sidebar = () => {
+const Sidebar = ({ isMobile, isOpen, toggleSidebar }) => {
   const sidebarLinks = [
     { id: 1, name: "Women's Fashion", path: "#" },
     { id: 2, name: "Men's Fashion", path: "#" },
@@ -19,20 +19,49 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="w-64 bg-gray-100 h-screen p-6 border-r">
-      <h2 className="text-xl font-bold mb-4">Categories</h2>
-      <ul className="space-y-4">
-        {sidebarLinks.map((link) => (
-          <li key={link.id}>
-            <a
-              href={link.path}
-              className="block text-gray-700 hover:text-red-500 transition"
-            >
-              {link.name}
-            </a>
-          </li>
-        ))}
-      </ul>
+    <div>
+      {isMobile ? (
+        // Mobile Sidebar Dropdown
+        <div className="relative">
+          <button
+            onClick={toggleSidebar}
+            className="block p-2 bg-gray-100 border w-full text-left"
+          >
+            Categories
+          </button>
+          {isOpen && (
+            <ul className="absolute bg-white shadow-lg w-full z-10">
+              {sidebarLinks.map((link) => (
+                <li key={link.id}>
+                  <a
+                    href={link.path}
+                    className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ) : (
+        // Desktop Sidebar
+        <div className="w-64 bg-gray-100 h-screen p-6 border-r hidden md:block">
+          <h2 className="text-xl font-bold mb-4">Categories</h2>
+          <ul className="space-y-4">
+            {sidebarLinks.map((link) => (
+              <li key={link.id}>
+                <a
+                  href={link.path}
+                  className="block text-gray-700 hover:text-red-500 transition"
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };

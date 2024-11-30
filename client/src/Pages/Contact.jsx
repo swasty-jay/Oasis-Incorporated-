@@ -60,6 +60,9 @@ function Contact() {
             <button
               type="submit"
               className="  bg-red-400 text-white p-2 rounded-md hover:bg-red-600 transition duration-200"
+              onClick={(e) => {
+                e.preventDefault();
+              }}
             >
               Send Message
             </button>
