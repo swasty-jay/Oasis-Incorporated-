@@ -1,70 +1,67 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import heroBanner1 from "../assets/images/heroBanner1.jpg";
-import headphone1 from "../assets/images/headphone1.jpg";
-import headphone2 from "../assets/images/headphone2.jpg";
+// // Sidebar Component
+// const Sidebar = ({ isMobile, isOpen, toggleSidebar }) => {
+//   const sidebarLinks = [
+//     { id: 1, name: "Women's Fashion", path: "#" },
+//     { id: 2, name: "Men's Fashion", path: "#" },
+//     { id: 3, name: "Electronics", path: "#" },
+//     { id: 4, name: "Home & Lifestyle", path: "#" },
+//     { id: 5, name: "Medicine", path: "#" },
+//     { id: 6, name: "Sports & Outdoor", path: "#" },
+//     { id: 7, name: "Baby's & Toys", path: "#" },
+//     { id: 8, name: "Groceries & Pets", path: "#" },
+//     { id: 9, name: "Health & Beauty", path: "#" },
+//   ];
 
-// Sidebar Component
-const Sidebar = ({ isMobile, isOpen, toggleSidebar }) => {
-  const sidebarLinks = [
-    { id: 1, name: "Women's Fashion", path: "#" },
-    { id: 2, name: "Men's Fashion", path: "#" },
-    { id: 3, name: "Electronics", path: "#" },
-    { id: 4, name: "Home & Lifestyle", path: "#" },
-    { id: 5, name: "Medicine", path: "#" },
-    { id: 6, name: "Sports & Outdoor", path: "#" },
-    { id: 7, name: "Baby's & Toys", path: "#" },
-    { id: 8, name: "Groceries & Pets", path: "#" },
-    { id: 9, name: "Health & Beauty", path: "#" },
-  ];
-
-  return (
-    <div>
-      {isMobile ? (
-        // Mobile Sidebar Dropdown
-        <div className="relative">
-          <button
-            onClick={toggleSidebar}
-            className="block p-2 bg-gray-100 border w-full text-left"
-          >
-            Categories
-          </button>
-          {isOpen && (
-            <ul className="absolute bg-white shadow-lg w-full z-10">
-              {sidebarLinks.map((link) => (
-                <li key={link.id}>
-                  <a
-                    href={link.path}
-                    className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      ) : (
-        // Desktop Sidebar
-        <div className="w-64 bg-gray-100 h-screen p-6 border-r hidden md:block">
-          <h2 className="text-xl font-bold mb-4">Categories</h2>
-          <ul className="space-y-4">
-            {sidebarLinks.map((link) => (
-              <li key={link.id}>
-                <a
-                  href={link.path}
-                  className="block text-gray-700 hover:text-red-500 transition"
-                >
-                  {link.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
-  );
-};
+//   return (
+//     <div>
+//       {isMobile ? (
+//         // Mobile Sidebar Dropdown
+//         <div className="relative">
+//           <button
+//             onClick={toggleSidebar}
+//             className="block p-2 bg-gray-100 border w-full text-left"
+//           >
+//             Categories
+//           </button>
+//           {isOpen && (
+//             <ul className="absolute bg-white shadow-lg w-full z-10">
+//               {sidebarLinks.map((link) => (
+//                 <li key={link.id}>
+//                   <a
+//                     href={link.path}
+//                     className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
+//                   >
+//                     {link.name}
+//                   </a>
+//                 </li>
+//               ))}
+//             </ul>
+//           )}
+//         </div>
+//       ) : (
+//         // Desktop Sidebar
+//         <div className="w-64 bg-gray-100 h-screen p-6 border-r hidden md:block">
+//           <h2 className="text-xl font-bold mb-4">Categories</h2>
+//           <ul className="space-y-4">
+//             {sidebarLinks.map((link) => (
+//               <li key={link.id}>
+//                 <a
+//                   href={link.path}
+//                   className="block text-gray-700 hover:text-red-500 transition"
+//                 >
+//                   {link.name}
+//                 </a>
+//               </li>
+//             ))}
+//           </ul>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
 
 // Home Component
 const Home = () => {
@@ -79,14 +76,14 @@ const Home = () => {
     },
     {
       id: 2,
-      image: headphone1,
+      image: "",
       title: "Discover New Gadgets",
       description: "Latest electronics at unbeatable prices.",
       buttonText: "Explore",
     },
     {
       id: 3,
-      image: headphone2,
+      image: "banner3.jpg",
       title: "Style Your Home",
       description: "Modern furniture for every space.",
       buttonText: "Shop Furniture",
@@ -94,8 +91,18 @@ const Home = () => {
   ];
 
   const flashSalesProducts = [
-    { id: 1, image: headphone1, title: "HAVIT HV G92 Gamepad", price: "$25" },
-    { id: 2, image: headphone2, title: "AK-900 Wired Keyboard", price: "$30" },
+    {
+      id: 1,
+      image: "product1.jpg",
+      title: "HAVIT HV G92 Gamepad",
+      price: "$25",
+    },
+    {
+      id: 2,
+      image: "product2.jpg",
+      title: "AK-900 Wired Keyboard",
+      price: "$30",
+    },
     { id: 3, image: "product3.jpg", title: "IPS LCD Monitor", price: "$120" },
     {
       id: 4,
@@ -153,11 +160,6 @@ const Home = () => {
   return (
     <div className="flex">
       {/* Sidebar */}
-      <Sidebar
-        isMobile={true}
-        isOpen={isSidebarOpen}
-        toggleSidebar={toggleSidebar}
-      />
 
       {/* Main Content */}
       <div className="flex-1 container mx-auto px-4 py-8">
